@@ -1,0 +1,13 @@
+# Intellij
+.idea/
+*.iml
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Project
+*.mp4
