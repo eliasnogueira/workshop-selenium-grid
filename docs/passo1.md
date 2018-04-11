@@ -1,5 +1,7 @@
 # Dojo Selenium Grid
 
+[Voltar](index.md)
+
 ## Passo 1 - Criando scripts de teste
 
 ### Pre condição
@@ -81,3 +83,5 @@ Fazemos isso através do método _quit()_ do _driver_.
 ```java
 driver.quit();
 ```
+
+[Voltar](index.md)
