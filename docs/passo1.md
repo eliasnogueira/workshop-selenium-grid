@@ -84,4 +84,4 @@ Fazemos isso através do método _quit()_ do _driver_.
 driver.quit();
 ```
 
-[Voltar](index.md)
+[Próximo >](passo2.md) ou [Voltar](index.md)
