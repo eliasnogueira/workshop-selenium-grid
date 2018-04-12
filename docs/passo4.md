@@ -74,4 +74,4 @@ A nova inicialização ficará como o código abaixo:
 WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desiredCapability);
 ```
 
-[< Voltar](passo3.md) | [Lista de passos](index.md) | [Avançar >](passo4.md)
+[< Voltar](passo3.md) | [Lista de passos](index.md) | [Avançar >](passo5.md)

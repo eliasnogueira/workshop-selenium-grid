@@ -57,4 +57,4 @@ public static String getValueFromConf(String property) {
 
 Utilize o método `getValueFromConf` passando como parâmetro a propriedade do browser.
 
-[< Voltar](passo2.md) | [Lista de passos](index.md) | [Avançar >](passo3.md)
+[< Voltar](passo2.md) | [Lista de passos](index.md) | [Avançar >](passo4.md)
