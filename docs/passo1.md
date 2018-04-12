@@ -16,10 +16,10 @@ Existe bibliotecas para diferentes linguagens de programação, que podem ser vi
 
 #### Iniciando um browser web
 
-O ponto de partida é a classe _WebDriver_ onde é preciso instanciar o browser para a execução do teste. No nosso caso usaremos o Google Chrome e Firefox, sendo as classes:
+O ponto de partida é a classe `WebDriver` onde é preciso instanciar o browser para a execução do teste. No nosso caso usaremos o Google Chrome e Firefox, sendo as classes:
 
-* ChromeDriver()
-* FirefoxDriver()
+* `ChromeDriver()`
+* `FirefoxDriver()`
 
 Exemplo:
 
@@ -65,7 +65,7 @@ driver.findElement(By.cssSelector(".btn.primary")).getText();
 
 Toda e qualquer validação precisa do suporte de um framework de teste unitário. Em nosso dojo estamos usando o TestNG.
 
-Ele possui métodos de asserção através da classe Assertions, onde o mais comum é validar o resultado obtido versus o resultado esperado. Usamos o método _assertEquals_ para isso.
+Ele possui métodos de asserção através da classe Assertions, onde o mais comum é validar o resultado obtido versus o resultado esperado. Usamos o método `assertEquals` para isso.
 
 O _resultado obtido_ é aquele que vem da interface gráfica, geralmente um texto.
 
@@ -78,10 +78,10 @@ Assertion.assertEquals(driver.findElement(By.id("mensagem").getText()), "Salvo c
 #### Fechando o browser web
 
 Ao final das ações e validações é necessário fechar o browser web.
-Fazemos isso através do método _quit()_ do _driver_.
+Fazemos isso através do método `quit()` do `driver`.
 
 ```java
 driver.quit();
 ```
 
-[Próximo >](passo2.md) ou [Voltar](index.md)
+[Lista de passos](index.md) | [Próximo >](passo2.md)
