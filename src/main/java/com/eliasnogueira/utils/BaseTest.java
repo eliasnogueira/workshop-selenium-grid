@@ -16,8 +16,13 @@
 package com.eliasnogueira.utils;
 
 import com.eliasnogueira.exception.BrowserNotSupportedException;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -36,7 +41,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters("browser")
-    public void preCondicao(@Optional("chromee") String browser) throws MalformedURLException, BrowserNotSupportedException {
+    public void preCondicao(@Optional("chrome") String browser) throws MalformedURLException, BrowserNotSupportedException {
         driver = getDriver(browser);
     }
 
@@ -66,33 +71,34 @@ public class BaseTest {
     }
 
     /**
-     * Return a DesiredCapability for a given browser
+     * Return a MutableCapabilities for a given browser
      * @param browser the browser name. Allowed browsers are: chrome, firefox, ie-11
-     * @return a DesiredCapability
+     * @return a MutableCapabilities
      * @throws Exception if the browser is not mapped
      */
-    private static DesiredCapabilities returnCapability(String browser) throws BrowserNotSupportedException {
-        DesiredCapabilities desiredCapabilities;
+    private static MutableCapabilities returnCapability(String browser) throws BrowserNotSupportedException {
+        MutableCapabilities capabilities;
 
         switch (browser.toLowerCase()) {
 
             case "chrome":
-                desiredCapabilities = DesiredCapabilities.chrome();
+                capabilities = new ChromeOptions();
+                ((ChromeOptions) capabilities).addArguments("start-maximized");
                 break;
 
             case "firefox":
-                desiredCapabilities = DesiredCapabilities.firefox();
+                capabilities = new FirefoxOptions();
                 break;
 
             case "ie-11":
-                desiredCapabilities = DesiredCapabilities.internetExplorer();
-                desiredCapabilities.setPlatform(Platform.WINDOWS);
+                capabilities = new InternetExplorerOptions();
+                capabilities.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
                 break;
 
             default:
                 throw new BrowserNotSupportedException("Browser not supported or misspelled: " + browser);
         }
 
-        return desiredCapabilities;
+        return capabilities;
     }
 }

@@ -20,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -39,9 +40,8 @@ public class MainPage {
 
         driver.get("http://www.medium.com");
 
-        PageFactory.initElements(driver, this);
-
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 15);
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
     }
 
 
