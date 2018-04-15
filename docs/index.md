@@ -15,3 +15,9 @@ O dojo está dividido em 5 grandes sessões para que seja possível ter um guia 
 * [Passo 4](passo4.md)
 * [Passo 5](passo5.md)
 * [Dicas](dicas.md)
+
+## Resolução
+
+Se você não conseguir avançar nos passo, ou mesmo que validar o que você desenvolveu dê uma olhada na brach _resolvido_.
+
+Lá há uma solução pronta para a execução de testes em um grid.
